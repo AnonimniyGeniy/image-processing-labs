@@ -1,0 +1,22 @@
+[
+  {
+    "file": "mona-lisa-blur-extra-credit.avi",
+    "bytes": 3554134,
+    "sha256": "3f52ca534fd294195172c7567abded3e43c21c2572558aad89a89ad19b96afd2"
+  },
+  {
+    "file": "mona-lisa-blur.avi",
+    "bytes": 3792184,
+    "sha256": "4b2aaf2659451e04131330efea663ee2d427d1d6934a50435fe93a6397756387"
+  },
+  {
+    "file": "mona-lisa.avi",
+    "bytes": 3832604,
+    "sha256": "0759b9a8f48fa66da719a1fa9a811dcf920fde5f11593429df7c75aeece0cd8e"
+  },
+  {
+    "file": "simple_track.avi",
+    "bytes": 14572822,
+    "sha256": "ebdc3be11669fbb05fd7ebc7767e5c40a3f2ae74d329936b04158f479916995e"
+  }
+]

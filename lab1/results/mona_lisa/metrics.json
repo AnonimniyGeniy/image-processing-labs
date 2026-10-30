@@ -1,0 +1,133 @@
+{
+  "environment": {
+    "python": "3.9.6",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "opencv": "4.11.0",
+    "numpy": "2.0.2",
+    "opencv_threads": 10
+  },
+  "method": "mean",
+  "C": 7,
+  "source": "First frame of provided mona-lisa.avi; grayscale image in lab1/data/mona_lisa.png",
+  "warmup_runs": 1,
+  "repeats": 1,
+  "different_pixels": 0,
+  "benchmarks": [
+    {
+      "width": 320,
+      "height": 180,
+      "block_size": 15,
+      "opencv": {
+        "median_ms": 0.04733400000000998,
+        "samples_ms": [
+          0.04733400000000998
+        ]
+      },
+      "native": {
+        "median_ms": 21.681333,
+        "samples_ms": [
+          21.681333
+        ]
+      },
+      "different_pixels": 0,
+      "speedup": 458.0498795790643
+    },
+    {
+      "width": 320,
+      "height": 180,
+      "block_size": 31,
+      "opencv": {
+        "median_ms": 0.06004199999998239,
+        "samples_ms": [
+          0.06004199999998239
+        ]
+      },
+      "native": {
+        "median_ms": 23.043583000000034,
+        "samples_ms": [
+          23.043583000000034
+        ]
+      },
+      "different_pixels": 0,
+      "speedup": 383.791062922734
+    },
+    {
+      "width": 640,
+      "height": 360,
+      "block_size": 15,
+      "opencv": {
+        "median_ms": 0.17954100000000528,
+        "samples_ms": [
+          0.17954100000000528
+        ]
+      },
+      "native": {
+        "median_ms": 86.13045899999999,
+        "samples_ms": [
+          86.13045899999999
+        ]
+      },
+      "different_pixels": 0,
+      "speedup": 479.72585091983143
+    },
+    {
+      "width": 640,
+      "height": 360,
+      "block_size": 31,
+      "opencv": {
+        "median_ms": 0.19041699999999828,
+        "samples_ms": [
+          0.19041699999999828
+        ]
+      },
+      "native": {
+        "median_ms": 90.80691699999998,
+        "samples_ms": [
+          90.80691699999998
+        ]
+      },
+      "different_pixels": 0,
+      "speedup": 476.884506110278
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "block_size": 15,
+      "opencv": {
+        "median_ms": 0.6655829999999696,
+        "samples_ms": [
+          0.6655829999999696
+        ]
+      },
+      "native": {
+        "median_ms": 344.37325,
+        "samples_ms": [
+          344.37325
+        ]
+      },
+      "different_pixels": 0,
+      "speedup": 517.4009101795203
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "block_size": 31,
+      "opencv": {
+        "median_ms": 0.7185000000000663,
+        "samples_ms": [
+          0.7185000000000663
+        ]
+      },
+      "native": {
+        "median_ms": 348.44825000000014,
+        "samples_ms": [
+          348.44825000000014
+        ]
+      },
+      "different_pixels": 0,
+      "speedup": 484.96624913008765
+    }
+  ],
+  "stored_input": "input.png"
+}

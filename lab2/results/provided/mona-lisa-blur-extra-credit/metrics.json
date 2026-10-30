@@ -1,0 +1,40 @@
+{
+  "input": "mona-lisa-blur-extra-credit.avi",
+  "roi_xywh": [
+    5,
+    5,
+    630,
+    350
+  ],
+  "environment": {
+    "python": "3.9.6",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "opencv": "4.11.0",
+    "numpy": "2.0.2",
+    "opencv_threads": 10
+  },
+  "parameters": {
+    "detector": "SIFT",
+    "nfeatures": 2500,
+    "ratio": 0.7,
+    "min_inliers": 8,
+    "min_inlier_ratio": 0.4,
+    "ransac_threshold_px": 3,
+    "fallback": "pyramidal LK + incremental similarity, forward-backward <1.5px, patch error <35"
+  },
+  "reference_keypoints": 634,
+  "frames": 558,
+  "container_frame_count": 558,
+  "fps": 29.97,
+  "detected_frames": 401,
+  "detection_rate": 0.7186379928315412,
+  "sift_frames": 197,
+  "lk_frames": 204,
+  "median_detection_ms": 22.262479500000154,
+  "processing_fps": 45.36485919074742,
+  "total_elapsed_s": 12.819721207999997,
+  "median_inliers_when_found": 86,
+  "ground_truth_available": false,
+  "note": "Detection rate is not accuracy. No manual ground-truth corners provided."
+}

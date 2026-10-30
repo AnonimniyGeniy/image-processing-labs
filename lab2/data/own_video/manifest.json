@@ -1,0 +1,19 @@
+{
+  "source_file": "IMG_7749.MOV",
+  "source_bytes": 78060266,
+  "source_sha256": "1c6add9fb983be63ffb1b8748b062c5334b74708c479ecb337b9ee56e8835f79",
+  "decoded_source_size_wh": [
+    3840,
+    2160
+  ],
+  "rotation_metadata_degrees": 90.0,
+  "working_size_wh": [
+    1280,
+    720
+  ],
+  "fps": 59.97469422184732,
+  "frames": 711,
+  "working_file": "working.mp4",
+  "working_sha256": "56cc7cbbf17a2891114fe2a0da21e235130c6bb3e19e7c1ba5b0f9689f72fffd",
+  "note": "OpenCV automatic orientation; all decoded frames retained; CFR copy at reported mean FPS; audio omitted"
+}

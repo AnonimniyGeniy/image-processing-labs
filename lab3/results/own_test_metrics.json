@@ -1,0 +1,222 @@
+{
+  "source": "user-collected handwriting; provenance is declared by the collector",
+  "checkpoint": "lab3/results/best_model.pt",
+  "metrics": {
+    "size": 50,
+    "accuracy": 0.94,
+    "macro_f1": 0.9381313131313131,
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ]
+    ],
+    "per_class": [
+      {
+        "digit": 0,
+        "support": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "digit": 1,
+        "support": 5,
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091
+      },
+      {
+        "digit": 2,
+        "support": 5,
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889
+      },
+      {
+        "digit": 3,
+        "support": 5,
+        "precision": 0.7142857142857143,
+        "recall": 1.0,
+        "f1": 0.8333333333333333
+      },
+      {
+        "digit": 4,
+        "support": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "digit": 5,
+        "support": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "digit": 6,
+        "support": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "digit": 7,
+        "support": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "digit": 8,
+        "support": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "digit": 9,
+        "support": 5,
+        "precision": 1.0,
+        "recall": 0.6,
+        "f1": 0.7499999999999999
+      }
+    ],
+    "loss": 0.08921309471130372
+  },
+  "checkpoint_sha256": "3f50f295fc3d0d756c16535b46de61f7d4b5fdb4d4dd4f774e985dc989822208",
+  "samples_per_class": [
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+  ],
+  "source_json_sha256": "a7f5f7dafc27e22ac812e1a16ecd3e9666d96c2045976267101472cb49cdc2e2",
+  "preprocessing": "auto polarity, Otsu foreground, fit 20x20, center of mass, normalize",
+  "warning": "Keep this set independent; do not tune model on its results",
+  "evaluation_date": "2026-10-30",
+  "model_unchanged_since_original_training": true
+}

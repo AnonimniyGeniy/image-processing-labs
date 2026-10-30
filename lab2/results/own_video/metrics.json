@@ -1,0 +1,61 @@
+{
+  "input": "working.mp4",
+  "roi_xywh": [
+    234,
+    52,
+    766,
+    627
+  ],
+  "reference_quad_xy": [
+    [
+      234.0,
+      122.0
+    ],
+    [
+      986.0,
+      52.0
+    ],
+    [
+      999.0,
+      678.0
+    ],
+    [
+      235.0,
+      635.0
+    ]
+  ],
+  "environment": {
+    "python": "3.9.6",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "opencv": "4.11.0",
+    "numpy": "2.0.2",
+    "opencv_threads": 10
+  },
+  "parameters": {
+    "detector": "SIFT",
+    "nfeatures": 2500,
+    "ratio": 0.7,
+    "min_inliers": 8,
+    "min_inlier_ratio": 0.4,
+    "ransac_threshold_px": 3,
+    "fallback": "pyramidal LK + incremental similarity, forward-backward <1.5px, patch error <35"
+  },
+  "reference_keypoints": 1776,
+  "frames": 711,
+  "container_frame_count": 711,
+  "fps": 59.975,
+  "detected_frames": 711,
+  "detection_rate": 1.0,
+  "sift_frames": 711,
+  "lk_frames": 0,
+  "median_detection_ms": 114.35195800000031,
+  "processing_fps": 8.445709359156117,
+  "total_elapsed_s": 86.61706174999999,
+  "median_inliers_when_found": 457,
+  "ground_truth_available": false,
+  "note": "Detection rate is not accuracy. No manual ground-truth corners provided.",
+  "source_manifest": "../../data/own_video/manifest.json",
+  "source_file": "IMG_7749.MOV",
+  "evaluation_date": "2026-10-30"
+}

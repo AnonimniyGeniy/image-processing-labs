@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Собственный тест: рукописные цифры</title>
+<style>
+:root{font:16px/1.5 system-ui,sans-serif;color:#202522;background:#f5f6f3}
+*{box-sizing:border-box}body{margin:0}main{max-width:960px;margin:40px auto;padding:0 24px}
+h1{font-size:28px;line-height:1.2;font-weight:650;max-width:650px}p{max-width:680px;color:#515b55}
+.layout{display:grid;grid-template-columns:320px 1fr;gap:40px;margin:32px 0}
+canvas{display:block;border:1px solid #a9b5ad;touch-action:none;background:white;width:280px;height:280px}
+label{display:block;margin-bottom:12px}select,button{font:inherit;padding:9px 14px;border:1px solid #a9b5ad;border-radius:5px;background:white;color:#202522;cursor:pointer}
+button.primary{background:#24634c;color:white;border-color:#24634c}button:disabled{opacity:.45;cursor:default}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.progress{font-size:32px;font-variant-numeric:tabular-nums;color:#24634c}
+.counts{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:24px 0}.counts div{border-bottom:1px solid #d1d8d2;padding:8px 0}
+.counts strong{display:block}.note{font-size:14px}.status{min-height:48px;color:#24634c}a{color:#24634c}
+@media(max-width:700px){main{margin:24px auto}.layout{grid-template-columns:1fr;gap:16px}}
+</style>
+<main>
+<p class="note">ЛР3 · независимый набор, собранный автором</p>
+<h1>Нарисуй 50 собственных цифр для проверки модели</h1>
+<p>Каждый раз пиши новую цифру мышью, стилусом или пальцем. Сохраняй по пять примеров каждого класса. Это отдельный тестовый набор: не используй его для обучения и подбора параметров модели.</p>
+<div class="layout"><section>
+<label>Пишу цифру <select id="label" aria-label="Метка цифры"></select></label>
+<canvas id="draw" width="280" height="280" aria-label="Поле для рисования цифры"></canvas>
+<div class="actions"><button id="clear">Очистить</button><button id="save" class="primary">Сохранить пример</button></div>
+<div id="status" class="status" role="status"></div>
+</section><section>
+<div class="progress"><span id="total">0</span> / 50</div>
+<p>Пиши крупно, оставляй поля. В одном примере должна быть одна цифра. Метка после сохранения переключается на наименее заполненный класс.</p>
+<div class="counts" id="counts"></div>
+<div class="actions"><button id="export" class="primary" disabled>Скачать own_digits.json</button><button id="undo" disabled>Удалить последний</button></div>
+<p class="note">Рисунки сохраняются только в этом браузере. После сбора скачай JSON и перенеси его в папку проекта <code>lab3/data/</code>.</p>
+<p class="note">Проверка: <code>python -m lab3.code.main evaluate-own --json lab3/data/own_digits.json</code></p>
+<p class="note">По заданию тест должен быть самостоятельно собран и размечен. Страница помогает сделать это вручную; если преподаватель требует именно фотографии, используй фотографии бумажных цифр и папки <code>lab3/data/own_digits/0</code> … <code>9</code>.</p>
+</section></div>
+</main>
+<script>
+'use strict';
+const canvas=document.querySelector('#draw'),ctx=canvas.getContext('2d',{willReadFrequently:true});
+const label=document.querySelector('#label'),status=document.querySelector('#status');
+for(let i=0;i<10;i++)label.add(new Option(String(i),String(i)));
+let samples=[];try{samples=JSON.parse(localStorage.getItem('cvlabs-digits-v1')||'[]');if(!Array.isArray(samples))samples=[]}catch{}
+let drawing=false,hasInk=false;
+function clear(){ctx.fillStyle='white';ctx.fillRect(0,0,280,280);hasInk=false}
+function pos(e){const r=canvas.getBoundingClientRect();return [(e.clientX-r.left)*280/r.width,(e.clientY-r.top)*280/r.height]}
+canvas.addEventListener('pointerdown',e=>{e.preventDefault();canvas.setPointerCapture(e.pointerId);drawing=true;hasInk=true;const[x,y]=pos(e);ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+.01,y+.01);ctx.lineWidth=16;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='black';ctx.stroke()});
+canvas.addEventListener('pointermove',e=>{if(!drawing)return;const[x,y]=pos(e);ctx.lineTo(x,y);ctx.stroke()});
+canvas.addEventListener('pointerup',()=>drawing=false);canvas.addEventListener('pointercancel',()=>drawing=false);
+function update(){const counts=Array(10).fill(0);samples.forEach(s=>counts[s.label]++);document.querySelector('#total').textContent=samples.length;document.querySelector('#counts').replaceChildren(...counts.map((n,i)=>{const d=document.createElement('div');const strong=document.createElement('strong');strong.textContent=i;d.append(strong,document.createTextNode(n+' / 5'));return d}));document.querySelector('#export').disabled=samples.length<50||counts.some(n=>n<1);document.querySelector('#undo').disabled=!samples.length;label.value=String(counts.indexOf(Math.min(...counts)))}
+document.querySelector('#clear').onclick=clear;
+document.querySelector('#save').onclick=()=>{if(!hasInk){status.textContent='Сначала нарисуй цифру.';return}const image=canvas.toDataURL('image/png');if(samples.some(s=>s.image===image)){status.textContent='Этот рисунок уже сохранён. Напиши новый пример.';return}samples.push({label:Number(label.value),image,collected_at:new Date().toISOString()});try{localStorage.setItem('cvlabs-digits-v1',JSON.stringify(samples))}catch{samples.pop();status.textContent='Браузер не смог сохранить рисунок. Освободи место в хранилище.';return}clear();update();status.textContent='Сохранено. Следующая цифра: '+label.value};
+document.querySelector('#undo').onclick=()=>{samples.pop();localStorage.setItem('cvlabs-digits-v1',JSON.stringify(samples));update();status.textContent='Последний пример удалён.'};
+document.querySelector('#export').onclick=()=>{const data={format:'cvlabs-own-digits-v1',collection_method:'manual browser handwriting',exported_at:new Date().toISOString(),samples};const url=URL.createObjectURL(new Blob([JSON.stringify(data)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='own_digits.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+clear();update();
+</script>
+</html>

@@ -1,0 +1,122 @@
+[
+  {
+    "input": "mona-lisa.avi",
+    "roi_xywh": [
+      5,
+      5,
+      630,
+      350
+    ],
+    "environment": {
+      "python": "3.9.6",
+      "platform": "macOS-27.0.1-arm64-arm-64bit",
+      "machine": "arm64",
+      "opencv": "4.11.0",
+      "numpy": "2.0.2",
+      "opencv_threads": 10
+    },
+    "parameters": {
+      "detector": "SIFT",
+      "nfeatures": 2500,
+      "ratio": 0.7,
+      "min_inliers": 8,
+      "min_inlier_ratio": 0.4,
+      "ransac_threshold_px": 3,
+      "fallback": "pyramidal LK + incremental similarity, forward-backward <1.5px, patch error <35"
+    },
+    "reference_keypoints": 636,
+    "frames": 558,
+    "container_frame_count": 558,
+    "fps": 29.97,
+    "detected_frames": 557,
+    "detection_rate": 0.9982078853046595,
+    "sift_frames": 237,
+    "lk_frames": 320,
+    "median_detection_ms": 22.755853999999907,
+    "processing_fps": 43.442672543531415,
+    "total_elapsed_s": 13.38429275,
+    "median_inliers_when_found": 85,
+    "ground_truth_available": false,
+    "note": "Detection rate is not accuracy. No manual ground-truth corners provided."
+  },
+  {
+    "input": "mona-lisa-blur.avi",
+    "roi_xywh": [
+      5,
+      5,
+      630,
+      350
+    ],
+    "environment": {
+      "python": "3.9.6",
+      "platform": "macOS-27.0.1-arm64-arm-64bit",
+      "machine": "arm64",
+      "opencv": "4.11.0",
+      "numpy": "2.0.2",
+      "opencv_threads": 10
+    },
+    "parameters": {
+      "detector": "SIFT",
+      "nfeatures": 2500,
+      "ratio": 0.7,
+      "min_inliers": 8,
+      "min_inlier_ratio": 0.4,
+      "ransac_threshold_px": 3,
+      "fallback": "pyramidal LK + incremental similarity, forward-backward <1.5px, patch error <35"
+    },
+    "reference_keypoints": 636,
+    "frames": 558,
+    "container_frame_count": 558,
+    "fps": 29.97,
+    "detected_frames": 538,
+    "detection_rate": 0.96415770609319,
+    "sift_frames": 218,
+    "lk_frames": 320,
+    "median_detection_ms": 22.75102100000126,
+    "processing_fps": 44.00018499570252,
+    "total_elapsed_s": 13.221805875,
+    "median_inliers_when_found": 85.0,
+    "ground_truth_available": false,
+    "note": "Detection rate is not accuracy. No manual ground-truth corners provided."
+  },
+  {
+    "input": "mona-lisa-blur-extra-credit.avi",
+    "roi_xywh": [
+      5,
+      5,
+      630,
+      350
+    ],
+    "environment": {
+      "python": "3.9.6",
+      "platform": "macOS-27.0.1-arm64-arm-64bit",
+      "machine": "arm64",
+      "opencv": "4.11.0",
+      "numpy": "2.0.2",
+      "opencv_threads": 10
+    },
+    "parameters": {
+      "detector": "SIFT",
+      "nfeatures": 2500,
+      "ratio": 0.7,
+      "min_inliers": 8,
+      "min_inlier_ratio": 0.4,
+      "ransac_threshold_px": 3,
+      "fallback": "pyramidal LK + incremental similarity, forward-backward <1.5px, patch error <35"
+    },
+    "reference_keypoints": 634,
+    "frames": 558,
+    "container_frame_count": 558,
+    "fps": 29.97,
+    "detected_frames": 401,
+    "detection_rate": 0.7186379928315412,
+    "sift_frames": 197,
+    "lk_frames": 204,
+    "median_detection_ms": 22.262479500000154,
+    "processing_fps": 45.36485919074742,
+    "total_elapsed_s": 12.819721207999997,
+    "median_inliers_when_found": 86,
+    "ground_truth_available": false,
+    "note": "Detection rate is not accuracy. No manual ground-truth corners provided."
+  }
+]

@@ -1,0 +1,6 @@
+Epoch 1/5: train loss=0.4445; val loss=0.1233; val acc=96.3600%; 4.9 s
+Epoch 2/5: train loss=0.1229; val loss=0.0814; val acc=97.6600%; 1.5 s
+Epoch 3/5: train loss=0.0872; val loss=0.0649; val acc=98.2800%; 1.6 s
+Epoch 4/5: train loss=0.0700; val loss=0.0563; val acc=98.3200%; 1.5 s
+Epoch 5/5: train loss=0.0572; val loss=0.0508; val acc=98.5800%; 1.5 s
+Official MNIST test accuracy: 98.7400%. Самостоятельный тест ещё не собран.
